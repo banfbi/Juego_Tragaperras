@@ -27,25 +27,36 @@ function tirar() {
   ];
 
   let tiempo = 0;
-  let interval = setInterval(() => {
+  let interval1 = setInterval(() => {
     let slot1 = rand(3);
-    let slot2 = rand(3);
-    let slot3 = rand(3);
-
     document.getElementById("slot1").innerHTML =
       '<img src="' + cambia_imagen[slot1] + '">';
-    document.getElementById("slot2").innerHTML =
-      '<img src="' + cambia_imagen[slot2] + '">';
-    document.getElementById("slot3").innerHTML =
-      '<img src="' + cambia_imagen[slot3] + '">';
-
     tiempo++;
     if (tiempo === 50) {
-      clearInterval(interval);
-      verificarResultados(slot1, slot2, slot3);
+      clearInterval(interval1);
+      let interval2 = setInterval(() => {
+        let slot2 = rand(3);
+        document.getElementById("slot2").innerHTML =
+          '<img src="' + cambia_imagen[slot2] + '">';
+        tiempo++;
+        if (tiempo === 100) {
+          clearInterval(interval2);
+          let interval3 = setInterval(() => {
+            let slot3 = rand(3);
+            document.getElementById("slot3").innerHTML =
+              '<img src="' + cambia_imagen[slot3] + '">';
+            tiempo++;
+            if (tiempo === 150) {
+              clearInterval(interval3);
+              verificarResultados(slot1, slot2, slot3);
+            }
+          }, 25);
+        }
+      }, 25);
     }
   }, 25);
 }
+
 
 function verificarResultados(slot1, slot2, slot3) {
   if (slot1 === slot2 && slot2 === slot3) {
