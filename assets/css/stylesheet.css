@@ -2,71 +2,124 @@
 Copyright (c) 2024. Alejandro Alberto Jiménez Brundin
 =======================================================*/
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-image: url(../../assets/img/background.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url(../../assets/img/background.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hecho {
-    color: black;
-    font-size: 10px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    margin-bottom: 0;
-    margin-top: 10px;
+  color: black;
+  font-size: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 800px;
-    width: 45%;
-    height: 40%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 45%;
+  height: 40%;
 }
 
-
 #tragaperras {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .slot {
-    width: 100px;
-    height: 100px;
-    margin: 0 10px;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slot img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+#botonTirar, #insertarMoneda {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
     cursor: pointer;
-}
+    outline: none;
+  }
+  
+  #botonTirar:hover, #insertarMoneda:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  #botonTirar:active, #insertarMoneda:active {
+    transform: translateY(-1px);
+  }
 
 #mensaje {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  --border-right: 6px;
+  --text-stroke-color: rgba(0, 0, 0, 0.6);
+  --animation-color: #37ff8b;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
 }
 
 /*=======================================================
