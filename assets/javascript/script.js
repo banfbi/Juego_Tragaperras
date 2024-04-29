@@ -6,7 +6,8 @@ let creditos = 0;
 
 function insertarMonedas() {
   creditos++;
-  document.getElementById("cuentaCreditos").innerHTML = creditos;
+  document.getElementById("cuentaCreditos").innerHTML = creditos + "<span style='color: red; font-size: smaller;'> +1 </span>";
+  document.getElementById("mensaje").innerHTML = "Has añadido 1 crédito.";
 }
 
 function rand(n) {
@@ -15,7 +16,7 @@ function rand(n) {
 
 function tirar() {
   if (creditos === 0) {
-    document.getElementById("mensaje").innerHTML = "No tienes monedas.";
+    document.getElementById("mensaje").innerHTML = "No tienes créditos.";
     return;
   }
 
